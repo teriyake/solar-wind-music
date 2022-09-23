@@ -11,4 +11,6 @@ freeverb~ (Pd external library)
 run `solar-wind-music.pd`  
 
 ## Todo
-
+1. real time data processing
+2. integerating hardware sensors (humidity, temperature, etc.)
+3. cleaning up the messy interface... 
