@@ -1,0 +1,103 @@
+#N canvas 780 312 1292 955 16;
+#X obj 265 149 f;
+#X obj 334 149 + 1;
+#X floatatom 265 178 5 0 0 0 - - - 0;
+#X obj 265 206 mod 4;
+#X obj 492 310 hradio 20 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X obj 261 288 select 0 1 2 3;
+#X obj 233 388 f;
+#X obj 286 386 f;
+#X obj 340 384 f;
+#X obj 395 389 f;
+#X obj 494 175 vsl 15 128 0 51 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 514 175 vsl 15 128 0 51 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 534 175 vsl 15 128 0 51 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 554 175 vsl 15 128 0 51 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 252 618 osc~;
+#X obj 265 76 inlet;
+#X text 327 73 metro trigger;
+#X obj 233 417 int;
+#X floatatom 233 446 5 0 0 0 - - - 0;
+#X obj 286 415 int;
+#X floatatom 286 444 5 0 0 0 - - - 0;
+#X obj 340 413 int;
+#X floatatom 340 442 5 0 0 0 - - - 0;
+#X obj 395 418 int;
+#X floatatom 395 447 5 0 0 0 - - - 0;
+#X obj 249 769 outlet~;
+#X obj 701 157 symbol;
+#X obj 701 199 t b s;
+#X symbolatom 729 240 10 0 0 0 - - - 0;
+#X obj 683 284 array get;
+#X obj 813 78 inlet;
+#X listbox 681 324 20 0 0 0 - - - 0;
+#X floatatom 455 599 5 0 0 0 - - - 0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array cv-tunings 100 float 5;
+#A 0 0 19.45 20.6 23.12 25.96 27.5 30.87 34.65 38.89 41.2 46.25 51.91
+55 61.74 69.3 77.78 82.41 92.5 103.83 110 123.47 138.59 155.56 164.81
+185 207.65 220 246.94 277.18 311.13 329.63 369.99 415.3 440 493.88
+554.37 622.25 659.25 739.99 830.61 880 987.77 1108.73 1244.51 1318.51
+1479.98 1661.22 1760 1975.53 2217.46 2489.02 2637.02 2959.96 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0;
+#X coords 0 250 1 249 200 140 0;
+#X restore 675 493 graph;
+#X text 876 77 tunings array;
+#X obj 470 74 inlet;
+#X obj 527 73 inlet;
+#X obj 585 73 inlet;
+#X obj 644 73 inlet;
+#X obj 255 508 tabread cv-tunings;
+#X msg 676 530 \; cv-tunings const 0;
+#X obj 664 363 array set cv-tunings;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 5 2 8 0;
+#X connect 5 3 9 0;
+#X connect 6 0 17 0;
+#X connect 7 0 19 0;
+#X connect 8 0 21 0;
+#X connect 9 0 23 0;
+#X connect 10 0 6 1;
+#X connect 11 0 7 1;
+#X connect 12 0 8 1;
+#X connect 13 0 9 1;
+#X connect 14 0 25 0;
+#X connect 15 0 0 0;
+#X connect 17 0 18 0;
+#X connect 18 0 39 0;
+#X connect 19 0 20 0;
+#X connect 20 0 39 0;
+#X connect 21 0 22 0;
+#X connect 22 0 39 0;
+#X connect 23 0 24 0;
+#X connect 24 0 39 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 27 0 29 0;
+#X connect 27 1 28 0;
+#X connect 28 0 29 2;
+#X connect 29 0 31 0;
+#X connect 30 0 26 1;
+#X connect 30 0 26 0;
+#X connect 31 0 41 0;
+#X connect 35 0 10 0;
+#X connect 36 0 11 0;
+#X connect 37 0 12 0;
+#X connect 38 0 13 0;
+#X connect 39 0 14 0;
+#X connect 39 0 14 1;
+#X connect 39 0 32 0;
+#X coords 0 -1 1 1 90 170 2 487 165;
